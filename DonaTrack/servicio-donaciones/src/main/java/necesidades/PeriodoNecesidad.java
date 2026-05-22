@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import donaciones.SegmentoDonacion;
-import enums.Periodo;
+import enums.TipoPeriodo;
 
 public class PeriodoNecesidad {
     private LocalDate inicioPeriodo;
-    private Periodo tipoPeriodo;
+    private TipoPeriodo tipoPeriodo;
     private List<SegmentoDonacion> segmentosPeriodo;
     private float cantidadSolicitada;
 
-    public PeriodoNecesidad(LocalDate inicioPeriodo, Periodo tipoPeriodo, List<SegmentoDonacion> segmentosPeriodo,
+    public PeriodoNecesidad(LocalDate inicioPeriodo, TipoPeriodo tipoPeriodo, List<SegmentoDonacion> segmentosPeriodo,
         float cantidadSolicitada) {
         this.inicioPeriodo = inicioPeriodo;
         this.tipoPeriodo = tipoPeriodo;
@@ -29,11 +29,11 @@ public class PeriodoNecesidad {
         this.inicioPeriodo = inicioPeriodo;
     }
 
-    public Periodo getTipoPeriodo() {
+    public TipoPeriodo getTipoPeriodo() {
         return this.tipoPeriodo;
     }
 
-    public void setTipoPeriodo(Periodo tipoPeriodo) {
+    public void setTipoPeriodo(TipoPeriodo tipoPeriodo) {
         this.tipoPeriodo = tipoPeriodo;
     }
 

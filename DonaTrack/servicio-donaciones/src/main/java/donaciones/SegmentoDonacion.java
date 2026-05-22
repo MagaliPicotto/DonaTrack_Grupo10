@@ -14,15 +14,15 @@ public class SegmentoDonacion {
     private CriterioSegmentacion criterio;
     private Necesidad necesidad;
     private LocalDate fechaAsignacion;
-    private EstadoSegmento estado;
+    private EstadoSegmento estadoSegmento;
 
-    public SegmentoDonacion(List<Bien> bienes, Donacion donacion, CriterioSegmentacion criterio, Necesidad necesidad, LocalDate fechaAsignacion, EstadoSegmento estado) {
+    public SegmentoDonacion(List<Bien> bienes, Donacion donacion, CriterioSegmentacion criterio, Necesidad necesidad, LocalDate fechaAsignacion, EstadoSegmento estadoSegmento) {
         this.bienes = bienes != null ? bienes : new ArrayList<>();
         this.donacion = donacion;
         this.criterio = criterio;
         this.necesidad = necesidad;
         this.fechaAsignacion = fechaAsignacion;
-        this.estado = estado != null ? estado : EstadoSegmento.DISPONIBLE;
+        this.estadoSegmento = estadoSegmento != null ? estadoSegmento : EstadoSegmento.DISPONIBLE;
     }
 
     public List<Bien> getBienes() {
@@ -66,11 +66,11 @@ public class SegmentoDonacion {
     }
 
     public EstadoSegmento getEstado() {
-        return this.estado;
+        return this.estadoSegmento;
     }
 
-    public void setEstado(EstadoSegmento estado) {
-        this.estado = estado;
+    public void setEstado(EstadoSegmento estadoSegmento) {
+        this.estadoSegmento = estadoSegmento;
     }
 
     public float cantidadTotal() {
@@ -78,12 +78,12 @@ public class SegmentoDonacion {
     }
 
     public boolean asignado() {
-        return this.estado != EstadoSegmento.DISPONIBLE;
+        return this.estadoSegmento != EstadoSegmento.DISPONIBLE;
     }
 
     public void asignar(Necesidad necesidad) {
         this.necesidad = necesidad;
         this.fechaAsignacion = LocalDate.now();
-        this.estado = EstadoSegmento.ASIGNADO;
+        this.estadoSegmento = EstadoSegmento.ASIGNADO;
     }
 }

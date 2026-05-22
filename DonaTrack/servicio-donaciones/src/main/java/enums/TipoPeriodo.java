@@ -1,6 +1,6 @@
 package enums;
 
-public enum Periodo {
+public enum TipoPeriodo {
     SEMANAL,
     MENSUAL,
     ANUAL

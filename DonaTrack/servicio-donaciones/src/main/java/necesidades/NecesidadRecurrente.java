@@ -10,9 +10,9 @@ public class NecesidadRecurrente extends Necesidad {
     private List<PeriodoNecesidad> historialPeriodos;
     private PeriodoNecesidad periodoActual;
 
-    public NecesidadRecurrente(Subcategoria subcategoria, String descripcion, float cantidad,
+    public NecesidadRecurrente(Subcategoria subcategoria, String descripcion,
         List<PeriodoNecesidad> historialPeriodos, PeriodoNecesidad periodoActual) {
-        super(subcategoria, descripcion, cantidad);
+        super(subcategoria, descripcion);
         this.historialPeriodos = historialPeriodos != null ? historialPeriodos : new ArrayList<>();
         this.periodoActual = periodoActual;
     }
@@ -25,6 +25,11 @@ public class NecesidadRecurrente extends Necesidad {
     @Override
     public float cantidadCubierta() {
         return this.periodoActual.cantidadCubierta();
+    }
+
+    @Override
+    public float getCantidadSolicitada() {
+        return this.periodoActual.getCantidadSolicitada();
     }
 
     @Override
